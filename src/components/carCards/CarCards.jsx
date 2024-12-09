@@ -1,5 +1,5 @@
 import React from 'react'
-import "./CarCards.css"
+import './CarCards.css';
 import { Link } from 'react-router-dom';
 
 function CarCards({ brand, model, mileage, price, fuelType, additionalFeatures, image, carType, id }) {
