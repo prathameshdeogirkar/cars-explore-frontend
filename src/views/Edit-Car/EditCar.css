@@ -98,3 +98,76 @@
     background: linear-gradient(135deg, #e53935, #d32f2f);
   }
   
+
+
+
+
+
+  @media (max-width: 1199px) and (min-width: 768px) {
+    .card {
+      width: 400px; 
+      margin: 20px 15px; 
+    }
+  
+    .car-image {
+      height: 130px; 
+    }
+  
+    .car-model-text {
+      font-size: 18px; 
+    }
+  
+    .car-brand-name,
+    .brand {
+      font-size: 15px;
+    }
+  }
+  
+  
+  @media (max-width: 767px) {
+    .card {
+      width: 90%; 
+      margin: 15px auto; 
+      flex-direction: column; 
+      align-items: center; 
+      padding: 10px;
+    }
+  
+    .car-image {
+      height: 100px; 
+    }
+  
+    .car-model-text {
+      font-size: 16px;
+      text-align: center;
+    }
+  
+    .car-brand-name,
+    .brand {
+      font-size: 14px;
+    }
+  }
+  
+  
+  @media (max-width: 480px) {
+    .card {
+      width: 90%; 
+      padding: 10px;
+      margin: 10px auto;
+      gap: 10px;
+      
+    }
+  
+    .car-image {
+      height: 150px; 
+    }
+  
+    .car-model-text {
+      font-size: 17px;
+    }
+  
+    .car-brand-name,
+    .brand {
+      font-size: 12px;
+    }
+  }

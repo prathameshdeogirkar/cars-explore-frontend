@@ -98,3 +98,39 @@
     background: linear-gradient(135deg, #e53935, #d32f2f);
   }
   
+
+
+
+
+
+
+@media (max-width: 480px) {
+  .popup-content {
+    width: 100%; 
+    border-radius: 0;
+    padding: 10px;
+  }
+
+  .popup-title {
+    font-size: 1rem; 
+    margin-bottom: 15px; 
+  }
+
+  .popup-input {
+    font-size: 0.85rem; 
+    padding: 6px 10px; 
+    margin-bottom: 10px; 
+  }
+
+  .popup-buttons {
+    flex-direction: column; 
+    gap: 10px; 
+    align-items: center;
+  }
+
+  .popup-button {
+    width: 90%; 
+    font-size: 0.85rem; 
+    padding: 8px 12px; 
+  }
+}
