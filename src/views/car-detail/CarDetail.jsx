@@ -2,35 +2,35 @@ import React, { useEffect, useState } from 'react';
 import './CarDetail.css';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const apiUrl = import.meta.env.VITE_APP_API_URL
+const apiUrl = import.meta.env.VITE_APP_API_URL;
 
 function CarDetail() {
   const [car, setCar] = useState({});
   const { id } = useParams();
   const navigate = useNavigate();
 
-  
   const loadCarDetail = async (id) => {
     try {
       const response = await axios.get(`${apiUrl}/cars/${id}`);
       setCar(response.data.data);
     } catch (err) {
       console.error('Error fetching car details:', err);
-      alert('Failed to load car details. Please try again.');
+      toast.error('Failed to load car details. Please try again.');
     }
   };
 
- 
   const deleteCar = async (id) => {
     if (window.confirm('Are you sure you want to delete this car?')) {
       try {
         await axios.delete(`${apiUrl}/cars/${id}`);
-        alert('Car deleted successfully!');
-        navigate(-1); 
+        toast.success('Car deleted successfully!');
+        setTimeout(() => navigate(-1), 2000); 
       } catch (err) {
         console.error('Error deleting car:', err);
-        alert('Failed to delete the car. Please try again.');
+        toast.error('Failed to delete the car. Please try again.');
       }
     }
   };
@@ -39,7 +39,6 @@ function CarDetail() {
     loadCarDetail(id);
   }, [id]);
 
-  
   if (!car) return <h1>Car details not found!</h1>;
 
   return (
@@ -53,7 +52,6 @@ function CarDetail() {
         color: 'black',
       }}
     >
-
       <div className="buttons-container">
         <button
           type="button"
@@ -108,8 +106,7 @@ function CarDetail() {
           </div>
         </div>
       </div>
-
-      
+      <ToastContainer position="top-center" autoClose={3000} />
     </div>
   );
 }
