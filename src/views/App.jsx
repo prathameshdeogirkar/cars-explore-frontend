@@ -7,11 +7,14 @@ import './App.css'
 import addCarImg from './../assets/add-car.png'
 import { Link } from 'react-router-dom';
 
+
+const apiUrl = import.meta.env.VITE_APP_API_URL
+
 function App() {
   const [cars, setCars] = useState([])
 
   const loadStudents = async () => {
-    const response = await axios.get("https://cars-explore-backend.onrender.com/cars");
+    const response = await axios.get(`${apiUrl}/cars`);
     setCars(response.data.data);
   }
 

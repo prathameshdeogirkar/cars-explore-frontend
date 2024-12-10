@@ -3,6 +3,8 @@ import './CarDetail.css';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+const apiUrl = import.meta.env.VITE_APP_API_URL
+
 function CarDetail() {
   const [car, setCar] = useState({});
   const { id } = useParams();
@@ -11,7 +13,7 @@ function CarDetail() {
   
   const loadCarDetail = async (id) => {
     try {
-      const response = await axios.get(`https://cars-explore-backend.onrender.com/cars/${id}`);
+      const response = await axios.get(`${apiUrl}/cars/${id}`);
       setCar(response.data.data);
     } catch (err) {
       console.error('Error fetching car details:', err);
@@ -23,7 +25,7 @@ function CarDetail() {
   const deleteCar = async (id) => {
     if (window.confirm('Are you sure you want to delete this car?')) {
       try {
-        await axios.delete(`https://cars-explore-backend.onrender.com/cars/${id}`);
+        await axios.delete(`${apiUrl}/cars/${id}`);
         alert('Car deleted successfully!');
         navigate(-1); 
       } catch (err) {

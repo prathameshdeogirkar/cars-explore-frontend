@@ -3,6 +3,8 @@ import './EditCar.css';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 
+const apiUrl = import.meta.env.VITE_APP_API_URL
+
 function EditCar() {
   const [car, setCar] = useState({
     brand: "",
@@ -22,7 +24,7 @@ function EditCar() {
   useEffect(() => {
     const fetchCarDetails = async () => {
       try {
-        const response = await axios.get(`https://cars-explore-backend.onrender.com/cars/${id}`);
+        const response = await axios.get(`${apiUrl}/cars/${id}`);
         console.log(response.data); 
         setCar(response.data.data || response.data); 
       } catch (error) {
@@ -36,7 +38,7 @@ function EditCar() {
 
   const editCar = async () => {
     try {
-      await axios.put(`https://cars-explore-backend.onrender.com/cars/${id}`, car);
+      await axios.put(`${apiUrl}/cars/${id}`, car);
       alert("Car details updated successfully!");
       navigate(-1 || '/'); 
     } catch (error) {

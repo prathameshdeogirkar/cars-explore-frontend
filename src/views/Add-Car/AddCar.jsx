@@ -3,6 +3,8 @@ import './AddCar.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
+const apiUrl = import.meta.env.VITE_APP_API_URL
+
 function AddCar() {
     const [car, setCar] = useState({
         brand: "",
@@ -20,7 +22,7 @@ function AddCar() {
 
     const AddCar = async () => {
         try {
-            await axios.post("https://cars-explore-backend.onrender.com/cars", {
+            await axios.post(`${apiUrl}/cars`, {
                 id: car.id,
                 brand: car.brand,
                 model: car.model,
