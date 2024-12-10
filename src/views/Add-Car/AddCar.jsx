@@ -20,7 +20,7 @@ function AddCar() {
 
     const AddCar = async () => {
         try {
-            await axios.post("http://localhost:5001/cars", {
+            await axios.post("https://cars-explore-backend.onrender.com/cars", {
                 id: car.id,
                 brand: car.brand,
                 model: car.model,

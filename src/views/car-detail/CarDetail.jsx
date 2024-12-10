@@ -11,7 +11,7 @@ function CarDetail() {
   
   const loadCarDetail = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:5001/cars/${id}`);
+      const response = await axios.get(`https://cars-explore-backend.onrender.com/cars/${id}`);
       setCar(response.data.data);
     } catch (err) {
       console.error('Error fetching car details:', err);
@@ -23,7 +23,7 @@ function CarDetail() {
   const deleteCar = async (id) => {
     if (window.confirm('Are you sure you want to delete this car?')) {
       try {
-        await axios.delete(`http://localhost:5001/cars/${id}`);
+        await axios.delete(`https://cars-explore-backend.onrender.com/cars/${id}`);
         alert('Car deleted successfully!');
         navigate(-1); 
       } catch (err) {

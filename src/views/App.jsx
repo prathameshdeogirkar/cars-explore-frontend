@@ -11,7 +11,7 @@ function App() {
   const [cars, setCars] = useState([])
 
   const loadStudents = async () => {
-    const response = await axios.get("http://localhost:5001/cars");
+    const response = await axios.get("https://cars-explore-backend.onrender.com/cars");
     setCars(response.data.data);
   }
 

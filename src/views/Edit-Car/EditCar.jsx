@@ -22,7 +22,7 @@ function EditCar() {
   useEffect(() => {
     const fetchCarDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:5001/cars/${id}`);
+        const response = await axios.get(`https://cars-explore-backend.onrender.com/cars/${id}`);
         console.log(response.data); 
         setCar(response.data.data || response.data); 
       } catch (error) {
@@ -36,7 +36,7 @@ function EditCar() {
 
   const editCar = async () => {
     try {
-      await axios.put(`http://localhost:5001/cars/${id}`, car);
+      await axios.put(`https://cars-explore-backend.onrender.com/cars/${id}`, car);
       alert("Car details updated successfully!");
       navigate(-1 || '/'); 
     } catch (error) {
