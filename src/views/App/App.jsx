@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import CarCards from '../components/carCards/CarCards';
-import Navbar from '../components/navbar/Navbar'
+import CarCards from './../../components/carCards/CarCards';
+import Navbar from './../../components/navbar/Navbar'
 import './App.css'
 
-import addCarImg from './../assets/add-car.png'
+import addCarImg from './../../assets/add-car.png'
 import { Link } from 'react-router-dom';
 
 
