@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import App from "./views/App/App";
-import CarDetail from "./views/Car-Detail/CarDetail";
+import CarDetail from './views/Car-Detail/CarDetail';
 import AddCar from "./views/Add-Car/AddCar";
 import EditCar from "./views/Edit-Car/EditCar";
 
